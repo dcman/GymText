@@ -11,20 +11,22 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     final static String TAG = MainActivity.class.getSimpleName();
 
     H7ConnectThread h7ConnectThread;
-    BluetoothDevice bluetoothDevice;
     BluetoothAdapter mBluetoothAdapter;
     List<BluetoothDevice> pairedDevices = new ArrayList<>();
     List<String> list = new ArrayList<>();
     boolean searchBt = true;
+    TextView heartRate, time;
     private Spinner spinner1;
 
     @Override
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         //Get the default BT adapter
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        heartRate = (TextView) findViewById(R.id.textViewBPM);
+        time = (TextView) findViewById(R.id.textViewTime);
         bluetoothCheck();
     }
 
@@ -100,7 +104,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Log.i(TAG, "onNothingSelected: You should pick something!");
     }
 
-    public void updateBPM(int bpm) {
-        Log.i(TAG, "updateBPM: " + bpm);
+    public void updateBPM(final int bpm) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                heartRate.setText(String.valueOf(bpm));
+                time.setText(String.valueOf(new Date()));
+            }
+        });
     }
 }

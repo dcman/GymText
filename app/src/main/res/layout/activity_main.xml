@@ -21,4 +21,18 @@
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/text_view_BPM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewBPM"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="@string/text_view_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTime"
+        android:textAlignment="center" />
 </LinearLayout>

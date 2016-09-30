@@ -5,4 +5,6 @@
     <string name="bluetooth_turn_on">Would you like me to turn on your Bluetooth?</string>
     <string name="bluetooth_should_be_on">Your bluetooth should be on now</string>
     <string name="string_list_discribe">Name \\n Address</string>
+    <string name="text_view_BPM">0</string>
+    <string name="text_view_time">00:00:00</string>
 </resources>
