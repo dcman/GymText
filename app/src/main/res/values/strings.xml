@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GmyTest</string>
+    <string name="selectDevice">Select Your device</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth_turn_on">Would you like me to turn on your Bluetooth?</string>
+    <string name="bluetooth_should_be_on">Your bluetooth should be on now</string>
+    <string name="string_list_discribe">Name \\n Address</string>
+</resources>
